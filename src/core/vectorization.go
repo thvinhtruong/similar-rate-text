@@ -8,7 +8,7 @@ import (
 // VectorizeText converts text into a sparse vector representation
 func VectorizeText(text string) map[string]int {
 	vector := make(map[string]int)
-	words := strings.Fields(text)
+	words := strings.Fields(strings.ToLower(text))
 	for _, word := range words {
 		vector[word]++
 	}

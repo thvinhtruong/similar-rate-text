@@ -12,6 +12,11 @@ func L2Normalize(vec map[string]int) map[string]float64 {
 	}
 	magnitude = math.Sqrt(magnitude)
 
+	// case division by zero
+	if magnitude == 0 {
+		return normalizedVec
+	}
+
 	for word, count := range vec {
 		normalizedVec[word] = float64(count) / magnitude
 	}
